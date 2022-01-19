@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "age": {
+      "type": "number",
+      "minimum": 18,
+      "maximum": 99
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "address1": {
+          "type": "string"
+        },
+        "address2": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string",
+          "enum": [
+            "England",
+            "Scotland",
+            "Wales",
+            "Northern Ireland"
+          ]
+        },
+        "postcode": {
+          "type": "string",
+          "pattern": "[A-Z]{2}[0-9]{2}\\s?\\d[A-Z]{2}"
+        }
+      }
+    }
+  }
+}
