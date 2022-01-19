@@ -1,4 +1,4 @@
-package scalacheckjsonfaker.schema
+package scalacheckgenjson.schema
 
 import play.api.libs.json.JsObject
 

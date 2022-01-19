@@ -1,9 +1,9 @@
-package scalacheckjsonfaker.properties
+package scalacheckgenjson.properties
 
 import org.scalacheck.Gen
 import play.api.libs.json.{JsNumber, JsObject, JsValue}
-import scalacheckjsonfaker.config.NumberConfig
-import scalacheckjsonfaker.values._
+import scalacheckgenjson.config.NumberConfig
+import scalacheckgenjson.values._
 
 object NumberProperty {
 

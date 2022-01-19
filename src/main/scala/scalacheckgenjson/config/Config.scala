@@ -1,4 +1,4 @@
-package scalacheckjsonfaker.config
+package scalacheckgenjson.config
 
 case class Config(
   arrayConfig: ArrayConfig,

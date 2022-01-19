@@ -1,8 +1,8 @@
-package scalacheckjsonfaker.properties
+package scalacheckgenjson.properties
 
 import org.scalacheck.Gen
 import play.api.libs.json.{JsBoolean, JsObject, JsValue}
-import scalacheckjsonfaker.values.Type
+import scalacheckgenjson.values.Type
 
 object BooleanProperty {
 

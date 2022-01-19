@@ -1,4 +1,4 @@
-package scalacheckjsonfaker.values
+package scalacheckgenjson.values
 
 import play.api.libs.json.{JsObject, Reads}
 

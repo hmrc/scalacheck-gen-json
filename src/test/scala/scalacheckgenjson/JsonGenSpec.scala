@@ -1,4 +1,4 @@
-package scalacheckjsonfaker
+package scalacheckgenjson
 
 import org.everit.json.schema.Schema
 import org.everit.json.schema.loader.SchemaLoader

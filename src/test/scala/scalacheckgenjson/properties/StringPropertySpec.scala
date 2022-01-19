@@ -1,11 +1,11 @@
-package scalacheckjsonfaker.properties
+package scalacheckgenjson.properties
 
 import org.scalacheck.Gen.{alphaNumStr, chooseNum, listOf}
 import org.scalacheck.{Gen, Shrink}
 import org.scalatest._
 import org.scalatest.prop.PropertyChecks
 import play.api.libs.json.{JsArray, JsNumber, JsObject, JsString}
-import scalacheckjsonfaker.config.StringConfig
+import scalacheckgenjson.config.StringConfig
 
 class StringPropertySpec extends FlatSpec with Matchers with PropertyChecks with OptionValues {
 

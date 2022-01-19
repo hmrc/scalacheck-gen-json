@@ -1,9 +1,9 @@
-package scalacheckjsonfaker.properties
+package scalacheckgenjson.properties
 
 import org.scalatest._
 import org.scalatest.prop.PropertyChecks
 import play.api.libs.json._
-import scalacheckjsonfaker.schema.Schema
+import scalacheckgenjson.schema.Schema
 
 class BooleanPropertySpec extends FlatSpec with Matchers with PropertyChecks with OptionValues {
 

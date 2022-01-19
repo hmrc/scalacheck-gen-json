@@ -1,10 +1,10 @@
-package scalacheckjsonfaker.properties
+package scalacheckgenjson.properties
 
 import org.scalacheck.Gen
 import play.api.libs.json.{JsObject, JsString, JsValue}
-import scalacheckjsonfaker.config.StringConfig
-import scalacheckjsonfaker.schema.Schema
-import scalacheckjsonfaker.values._
+import scalacheckgenjson.config.StringConfig
+import scalacheckgenjson.schema.Schema
+import scalacheckgenjson.values._
 import wolfendale.scalacheck.regexp.RegexpGen
 
 object StringProperty {

@@ -1,8 +1,8 @@
-package scalacheckjsonfaker.properties
+package scalacheckgenjson.properties
 
 import org.scalacheck.Gen
 import play.api.libs.json.{JsArray, JsObject, JsString, JsValue}
-import scalacheckjsonfaker.values.{Properties, Required, Type}
+import scalacheckgenjson.values.{Properties, Required, Type}
 
 object ObjectProperty {
 

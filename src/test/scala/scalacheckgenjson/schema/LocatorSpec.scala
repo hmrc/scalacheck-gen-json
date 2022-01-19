@@ -1,4 +1,4 @@
-package scalacheckjsonfaker.schema
+package scalacheckgenjson.schema
 
 import org.scalatest.{FlatSpec, Matchers, OptionValues}
 import org.scalatest.prop.PropertyChecks
