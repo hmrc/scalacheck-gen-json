@@ -4,653 +4,11 @@
     "description": "test schema",
     "type": "object",
     "properties": {
-        "household": {
-            "type": "object",
-            "properties": {
-                "applicationID": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                },
-                "autoProcessing": {
-                    "type": "boolean"
-                },
-                "household": {
-                    "type": "string",
-                    "enum": [
-                        "S",
-                        "J"
-                    ]
-                },
-                "latestApplicationVersion": {
-                    "type": "number",
-                    "maximum": 9999
-                },
-                "currentApplicationStatus": {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 20
-                },
-                "areaChangeForVersion": {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 50
-                },
-                "entitlementEndDate": {
-                    "$ref": "#/definitions/dateString"
-                },
-                "householdCeasedDate": {
-                    "$ref": "#/definitions/dateString"
-                },
-                "householdEndReason": {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 30
-                },
-                "createdDate": {
-                    "$ref": "#/definitions/dateString"
-                },
-                "creationTimestamp": {
-                    "$ref": "#/definitions/timeStamp"
-                },
-                "updateTimestamp": {
-                    "$ref": "#/definitions/timeStamp"
-                },
-                "applicant1Cbrn": {
-                    "type": "string",
-                    "minLength": 10,
-                    "maxLength": 10
-                },
-                "applicant2Cbrn": {
-                    "type": "string",
-                    "minLength": 10,
-                    "maxLength": 10
-                },
-                "otherCbrn": {
-                    "type": "string",
-                    "minLength": 10,
-                    "maxLength": 10
-                },
-                "appointeePresent": {
-                    "type": "boolean"
-                },
-                "appeal": {
-                    "type": "boolean"
-                },
-                "paymentStartDate": {
-                    "type": "boolean"
-                },
-                "sco": {
-                    "type": "boolean"
-                },
-                "specialNeeds": {
-                    "type": "boolean"
-                },
-                "suspendedPayments": {
-                    "type": "boolean"
-                },
-                "underEnquiry": {
-                    "type": "boolean"
-                },
-                "disputedOverpayment": {
-                    "type": "boolean"
-                },
-                "potentialPayment": {
-                    "type": "boolean"
-                },
-                "manualCorrespondenceWi": {
-                    "type": "boolean"
-                },
-                "finalisationInhibit": {
-                    "type": "boolean"
-                },
-                "finalisedInError": {
-                    "type": "boolean"
-                },
-                "pyEoyFinalised": {
-                    "type": "boolean"
-                },
-                "unprocessedCoc": {
-                    "type": "boolean"
-                },
-                "unprocessedS17": {
-                    "type": "boolean"
-                },
-                "supersededS17": {
-                    "type": "boolean"
-                },
-                "isJsaPc": {
-                    "type": "boolean"
-                },
-                "householdBreakdown": {
-                    "type": "boolean"
-                },
-                "terminated": {
-                    "type": "boolean"
-                },
-                "manualCorespondence": {
-                    "type": "boolean"
-                },
-                "complexCase": {
-                    "type": "boolean"
-                }
-            },
-            "additionalProperties": false
-        },
         "applicant1": {
             "$ref": "#/definitions/applicant"
         },
         "applicant2": {
             "$ref": "#/definitions/applicant"
-        },
-        "appointee": {
-            "type": "object",
-            "properties": {
-                "name1": {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 20
-                },
-                "name2": {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 20
-                },
-                "rls": {
-                    "type": "boolean"
-                },
-                "address": {
-                    "$ref": "#/definitions/address"
-                },
-                "addressId": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                },
-                "dayPhoneNumber": {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 20
-                },
-                "eveningPhoneNumber": {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 20
-                }
-            },
-            "additionalProperties": false
-        },
-        "previousYearFinalisationData": {
-            "type": "object",
-            "properties": {
-                "sec17Served": {
-                    "type": "boolean"
-                },
-                "finalised": {
-                    "type": "boolean"
-                },
-                "renewalReturnStatus": {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 40
-                }
-            },
-            "additionalProperties": false
-        },
-        "rtiExploitationData": {
-            "type": "object",
-            "properties": {
-                "incomeIntervention": {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 255
-                },
-                "fourWeekRoInter": {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 255
-                }
-            },
-            "additionalProperties": false
-        },
-        "reconciliationData": {
-            "type": "object",
-            "properties": {
-                "taxCreditPeriodStartDate": {
-                    "$ref": "#/definitions/dateString"
-                },
-                "taxCreditPeriodEndDate": {
-                    "$ref": "#/definitions/dateString"
-                },
-                "itemATotal": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                },
-                "itemBPayments": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                },
-                "itemDRecoveries": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                },
-                "itemJSetoffPayments": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                },
-                "itemKDue": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                },
-                "itemTOverpaidBalance": {
-                    "type": "number",
-                    "maximum": 999999999999999               
-                },
-                "itemUToPay": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                },
-                "itemVOverpaymentCF": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                },
-                "itemWDirectRecoveries": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                },
-                "itemXNotional": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                },
-                "ItemV1Remaining": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                },
-                "itemV2BalanceAlreadyRecovered": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                },
-                "itemV3Suspended": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                },
-                "itemMThisYear": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                },
-                "itemM1EoyProjection": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                },
-                "itemLEarlierYearTotal": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                },
-                "itemOGrandTotal": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                },
-                "netWtcPayable": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                },
-                "netCtcPayable": {
-                    "type": "number",
-                    "maximum": 999999999999999
-                }
-            },
-            "additionalProperties": false
-        },
-        "applicant1Benefits": {
-            "$ref": "#/definitions/applicantBenefits"
-        },
-        "applicant2Benefits": {
-            "$ref": "#/definitions/applicantBenefits"
-        },
-        "applicant1Income": {
-            "$ref": "#/definitions/income"
-        },
-        "applicant2Income": {
-            "$ref": "#/definitions/income"
-        },
-        "householdOtherIncome": {
-            "type": "array",
-            "minItems": 0,
-            "maxItems": 3,
-            "items": {
-                "type": "object",
-                "properties": {
-                    "taxCreditPeriodStartDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "taxCreditPeriodEndDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "incomeType": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 30
-                    },
-                    "incomeAmount": {
-                        "type": "number",
-                        "maximum": 99999999999
-                    },
-                    "incomeStatus": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 30
-                    }
-                },
-                "additionalProperties": false
-            }
-        },
-        "applicant1Periods": {
-            "$ref": "#/definitions/period"
-        },
-        "applicant2Periods": {
-            "$ref": "#/definitions/period"
-        },
-        "awardVersion": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 50,
-            "items": {
-                "type": "object",
-                "properties": {
-                    "taxCreditPeriodStartDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "taxCreditPeriodEndDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "number": {
-                        "type": "number",
-                        "maximum": 9999
-                    },
-                    "barcodeReference": {
-                        "type": "number",
-                        "maximum": 999999999999999
-                    },
-                    "startDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "endDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "issueDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "noticeType": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 20
-                    },
-                    "awardStatus": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 20
-                    },
-                    "wtcAmount": {
-                        "type": "number",
-                        "maximum": 999999999999999
-                    },
-                    "ctcAmount": {
-                        "type": "number",
-                        "maximum": 999999999999999
-                    },
-                    "totalTcAmount": {
-                        "type": "number",
-                        "maximum": 999999999999999
-                    },
-                    "calculatedDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "incomeUsed": {
-                        "type": "number",
-                        "maximum": 9999999999999
-                    },
-                    "incomeUsedYearType": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 150
-                    },
-                    "uina": {
-                        "type": "number",
-                        "maximum": 999999999999999
-                    },
-                    "lina": {
-                        "type": "number",
-                        "maximum": 999999999999999
-                    }
-                },
-                "additionalProperties": false
-            }
-        },
-        "awardElement": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 50,
-            "items": {
-                "type": "object",
-                "properties": {
-                    "avBarcodeReference": {
-                        "type": "number",
-                        "maximum": 999999999999999
-                    },
-                    "entitlementPeriodStartDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "entitlementPeriodEndDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "entitlementDescription": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 26
-                    },
-                    "sequenceNumber": {
-                        "type": "number",
-                        "maximum": 9999
-                    },
-                    "elementName": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 40
-                    },
-                    "occurrenceNumber": {
-                        "type": "number",
-                        "maximum": 99
-                    },
-                    "dailyRate": {
-                        "type": "number",
-                        "maximum": 999999999999999
-                    },
-                    "daysInPeriod": {
-                        "type": "number",
-                        "maximum": 999
-                    },
-                    "maximumAmount": {
-                        "type": "number",
-                        "maximum": 999999999999999
-                    }
-                },
-                "additionalProperties": false
-            }
-        },
-        "child": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 18,
-            "items": {
-                "type": "object",
-                "properties": {
-                    "childId": {
-                        "type": "number"
-                    },
-                    "number": {
-                        "type": "number"
-                    },
-                    "firstnames": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 35
-                    },
-                    "surname": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 35
-                    },
-                    "dateOfBirth": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "dateOfDeath": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "createdDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "creationTimestamp": {
-                        "$ref": "#/definitions/timeStamp"
-                    },
-                    "updateTimestamp": {
-                        "$ref": "#/definitions/timeStamp"
-                    }
-                },
-                "additionalProperties": false
-            }
-        },
-        "childPeriods": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 2160,
-            "items": {
-                "type": "object",
-                "properties": {
-                    "childNumber": {
-                        "type": "number"
-                    },
-                    "periodType": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 20
-                    },
-                    "startDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "endDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "includeFromDate": {
-                        "$ref": "#/definitions/dateString"
-                    }
-                },
-                "additionalProperties": false
-            }
-        },
-        "childCareProvider": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 10,
-            "items": {
-                "type": "object",
-                "properties": {
-                    "chcpNumber": {
-                        "type": "number",
-                        "maximum": 999999999999999
-                    },
-                    "name1": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 35
-                    },
-                    "name2": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 35
-                    },
-                    "approvingLocalAuthority": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 60
-                    },
-                    "registrationReference": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 25
-                    },
-                    "address": {
-                        "$ref": "#/definitions/address"
-                    },
-                    "addressId": {
-                        "type": "number",
-                        "maximum": 999999999999999
-                    }
-                },
-                "additionalProperties": false
-            }
-        },
-        "childCareCost": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 180,
-            "items": {
-                "type": "object",
-                "properties": {
-                    "childCareProvider": {
-                        "type": "number"
-                    },
-                    "taxCreditPeriodStartDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "taxCreditPeriodEndDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "costsStartDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "costsEndDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "costsEffectiveDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "weeklyCost": {
-                        "type": "number",
-                        "maximum": 99999999999
-                    }
-                },
-                "additionalProperties": false
-            }
-        },
-        "householdNote": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 325,
-            "items": {
-                "type": "object",
-                "properties": {
-                    "retentionStatus": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 1
-                    },
-                    "eventDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "noteCreatedDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "category": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 20
-                    },
-                    "contentType": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 4
-                    }
-                },
-                "additionalProperties": false
-            }
         },
         "payment": {
             "type": "array",
@@ -659,22 +17,11 @@
             "items": {
                 "type": "object",
                 "properties": {
-                    "taxCreditPeriodStartDate": {
+                    "startDate": {
                         "$ref": "#/definitions/dateString"
                     },
-                    "taxCreditPeriodEndDate": {
+                    "endDate": {
                         "$ref": "#/definitions/dateString"
-                    },
-                    "taxCreditId": {
-                        "type": "string",
-                        "enum": [
-                            "CTC",
-                            "WTC"
-                        ]
-                    },
-                    "futurePaymentsDueAmount": {
-                        "type": "number",
-                        "maximum": 9999999999999
                     },
                     "paymentAccountName": {
                         "type": "string",
@@ -691,76 +38,8 @@
                         "minLength": 1,
                         "maxLength": 6
                     },
-                    "paymentAccountBuildingSocietyReference": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 18
-                    },
                     "nextDueDate": {
                         "$ref": "#/definitions/dateString"
-                    }
-                },
-                "additionalProperties": false
-            }
-        },
-        "paymentDetail": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 50,
-            "items": {
-                "type": "object",
-                "properties": {
-                    "paymentStartDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "paymentEndDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "amount": {
-                        "type": "number",
-                        "maximum": 9999999999999
-                    },
-                    "totalAmount": {
-                        "type": "number",
-                        "maximum": 9999999999999
-                    },
-                    "taxCreditId": {
-                        "type": "string",
-                        "enum": [
-                            "CTC",
-                            "WTC"
-                        ]
-                    },
-                    "paymentType": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 8
-                    },
-                    "paymentMethod": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 12
-                    },
-                    "paymentFrequency": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 8
-                    }
-                },
-                "additionalProperties": false
-            }
-        },
-        "paymentChangesForecast": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 50,
-            "items": {
-                "type": "object",
-                "properties": {
-                    "description": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 70
                     }
                 },
                 "additionalProperties": false
@@ -773,18 +52,18 @@
             "items": {
                 "type": "object",
                 "properties": {
-                    "subjectDate": {
+                    "date": {
                         "$ref": "#/definitions/dateString"
                     },
                     "amount": {
                         "type": "number",
                         "maximum": 9999999999999
                     },
-                    "taxCreditId": {
+                    "id": {
                         "type": "string",
                         "enum": [
-                            "CTC",
-                            "WTC"
+                            "ABC",
+                            "CDE"
                         ]
                     },
                     "paymentType": {
@@ -797,79 +76,9 @@
                 },
                 "additionalProperties": false
             }
-        },
-        "reconciliationMessage": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 25,
-            "items": {
-                "type": "object",
-                "properties": {
-                    "taxCreditPeriodStartDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "taxCreditPeriodEndDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "messageText": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 120
-                    }
-                },
-                "additionalProperties": false
-            }
-        },
-        "derived": {
-            "type": "object",
-            "properties": {
-                "preAward": {
-                    "type": "boolean"
-                }
-            },
-            "additionalProperties": false
         }
     },
     "definitions": {
-        "period": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 60,
-            "items": {
-                "type": "object",
-                "properties": {
-                    "type": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 20
-                    },
-                    "createdDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "creationTimestamp": {
-                        "$ref": "#/definitions/timeStamp"
-                    },
-                    "updateTimestamp": {
-                        "$ref": "#/definitions/timeStamp"
-                    },
-                    "startDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "endDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "includeFromDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "relatedValue": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 20
-                    }
-                },
-                "additionalProperties": false
-            }
-        },
         "income": {
             "type": "array",
             "minItems": 1,
@@ -877,12 +86,6 @@
             "items": {
                 "type": "object",
                 "properties": {
-                    "taxCreditPeriodStartDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "taxCreditPeriodEndDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
                     "incomeType": {
                         "type": "string",
                         "minLength": 1,
@@ -901,47 +104,12 @@
                 "additionalProperties": false
             }
         },
-        "applicantBenefits": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 60,
-            "items": {
-                "type": "object",
-                "properties": {
-                    "periodType": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 20
-                    },
-                    "endDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "includeFromDate": {
-                        "$ref": "#/definitions/dateString"
-                    },
-                    "startDate": {
-                        "$ref": "#/definitions/dateString"
-                    }
-                },
-                "additionalProperties": false
-            }
-        },
         "applicant": {
             "type": "object",
             "properties": {
-                "taxpayerId": {
+                "id": {
                     "type": "number",
                     "maximum": 999999999999999
-                },
-                "ctcPaymentFrequency": {
-                    "type": "string",
-                    "enum": [
-                        "WEEKLY",
-                        "4 WEEKLY"
-                    ]
-                },
-                "ctcRecipientFlag": {
-                    "type": "boolean"
                 },
                 "dateOfBirth": {
                     "$ref": "#/definitions/dateString"
@@ -954,18 +122,10 @@
                     "minLength": 1,
                     "maxLength": 35
                 },
-                "nino": {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 9
-                },
                 "otherForenames": {
                     "type": "string",
                     "minLength": 1,
                     "maxLength": 35
-                },
-                "rls": {
-                    "type": "boolean"
                 },
                 "sex": {
                     "type": "string",
@@ -984,13 +144,6 @@
                     "minLength": 1,
                     "maxLength": 35
                 },
-                "wtcPaymentFrequency": {
-                    "type": "string",
-                    "enum": [
-                        "WEEKLY",
-                        "4 WEEKLY"
-                    ]
-                },
                 "address": {
                     "$ref": "#/definitions/address"
                 },
@@ -1008,63 +161,10 @@
                     "minLength": 1,
                     "maxLength": 20
                 },
-                "bankOrBuildingSociety": {
-					"type": "object",
-					"properties": {
-						"accountName": {
-							"type": "string",
-							"minLength": 1,
-							"maxLength": 20
-						},
-						"accountNumber": {
-							"type": "string",
-							"pattern": "^\\d{10}$"
-						},
-						"name": {
-							"type": "string",
-							"minLength": 1,
-							"maxLength": 35
-						},
-						"startDate": {
-							"$ref": "#/definitions/dateString"
-						},
-						"branchName": {
-							"type": "string",
-							"minLength": 1,
-							"maxLength": 35
-						},
-						"buildingSocietyReferenceNumber": {
-							"type": "string",
-							"minLength": 1,
-							"maxLength": 35
-						},
-						"modifiedBacsAccountNumber": {
-							"type": "string",
-							"pattern": "^\\d{10}$"
-						},
-						"modifiedBacsSortCode": {
-							"type": "string",
-							"pattern": "^\\d{6}$"
-						},
-						"sortCode": {
-							"type": "string",
-							"pattern": "^\\d{6}$"
-						},
-						"address": {
-							"$ref": "#/definitions/address"
-						}
-					},
-					"additionalProperties": false
-                },
                 "employment": {
 					"type": "object",
 					"properties": {
-						"employerName1": {
-							"type": "string",
-							"minLength": 1,
-							"maxLength": 28
-						},
-						"employerName2": {
+						"employerName": {
 							"type": "string",
 							"minLength": 1,
 							"maxLength": 28
@@ -1083,45 +183,15 @@
 							"minLength": 1,
 							"maxLength": 20
 						},
-						"mainEmployerReference": {
+						"employmentReference": {
 							"type": "string",
 							"pattern": "^\\w{13}$"
-						}
-					},
-					"additionalProperties": false
-                },
-                "work": {
-					"type": "object",
-					"properties": {
-						"numberOfPaidJobs": {
-							"type": "number",
-							"maximum": 99
-						},
-						"payrollNumber": {
-							"type": "string",
-							"minLength": 1,
-							"maxLength": 20
-						},
-						"selfEmploymentStartDate": {
-							"$ref": "#/definitions/dateString"
-						},
-						"selfEmploymentEndDate": {
-							"$ref": "#/definitions/dateString"
-						},
-						"selfEmploymentUtr": {
-							"type": "string",
-							"pattern": "^\\d{5}[3-9]\\d{4}$"
 						}
 					},
 					"additionalProperties": false
                 }
             },
             "additionalProperties": false
-        },
-        "timeStamp": {
-            "type": "string",
-            "pattern": "^\\d{4}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])([0-1][0-9]|2[0-3])([0-5][0-9])([0-5][0-9])$",
-            "description": "YYYYMMDDhhmmss"
         },
         "dateString": {
             "type": "string",
