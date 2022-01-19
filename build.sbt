@@ -1,13 +1,16 @@
 import Dependencies._
 
-lazy val root = (project in file(".")).
+lazy val commonSettings = Seq(
+  organization := "uk.gov.hmrc",
+  majorVersion := 0,
+  scalaVersion := "2.12.14",
+  isPublicArtefact := true
+)
+
+lazy val library = (project in file(".")).
   settings(
-    inThisBuild(List(
-      organization := "uk.gov.hmrc",
-      scalaVersion := "2.12.13",
-      version      := "0.1.0"
-    )),
-    name := "scalacheck-gen-json",
+    commonSettings,
+    publish / skip := true,
     libraryDependencies += scalaCheck,
     libraryDependencies += playJson,
     libraryDependencies += scRegExp,
