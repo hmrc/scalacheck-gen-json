@@ -15,5 +15,7 @@ lazy val library = (project in file(".")).
     libraryDependencies += playJson,
     libraryDependencies += scRegExp,
     libraryDependencies += scalaTest % Test,
+    libraryDependencies += scalaTestPlusCheck % Test,
     libraryDependencies += jsonSchema % Test,
+    libraryDependencies += flexmark % Test
   )
