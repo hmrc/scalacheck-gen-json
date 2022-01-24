@@ -1,16 +1,18 @@
 import Dependencies._
+import sbt.Keys._
+import sbt._
 
 lazy val commonSettings = Seq(
+  name := "scalacheck-gen-json",
   organization := "uk.gov.hmrc",
   majorVersion := 0,
   scalaVersion := "2.12.14",
   isPublicArtefact := true
 )
 
-lazy val library = (project in file(".")).
+lazy val library = Project("scalacheck-gen-json", file(".")).
   settings(
     commonSettings,
-    publish / skip := true,
     libraryDependencies += scalaCheck,
     libraryDependencies += playJson,
     libraryDependencies += scRegExp,
