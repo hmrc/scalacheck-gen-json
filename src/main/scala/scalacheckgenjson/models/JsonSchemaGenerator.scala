@@ -54,12 +54,12 @@ object JsonSchemaGenerator {
   }
 
   def generateString(min: Int, max: Int, enum: List[String], pattern: Option[String]): Gen[JsValue] = {
-    val pattenGen = pattern.map(p => RegexpGen.from(p))
+    val patternGen = pattern.map(p => RegexpGen.from(p))
     val enumGen = enum.headOption.map(_ => Gen.oneOf(enum))
     val minMaxGen = Gen.chooseNum(min, max).flatMap { n =>
       Gen.listOfN(n, Gen.alphaNumChar).map(_.mkString)
     }
 
-    pattenGen.orElse(enumGen).getOrElse(minMaxGen).map(JsString)
+    patternGen.orElse(enumGen).getOrElse(minMaxGen).map(JsString)
   }
 }
