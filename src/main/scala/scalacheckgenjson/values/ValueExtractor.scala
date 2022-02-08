@@ -18,16 +18,18 @@ package scalacheckgenjson.values
 
 import play.api.libs.json.{JsObject, Reads}
 
-sealed trait ValueExtractor[T] {
+sealed abstract class ValueExtractor[T: Reads] {
 
   val obj: JsObject
   val key: String
 
-  def asOpt(implicit ev: Reads[T]): Option[T] =
+  lazy val asOpt: Option[T] =
     obj.value.get(key).flatMap(_.asOpt[T])
 
-  def getOrDefault(default: T)(implicit ev: Reads[T]): T =
+  def getOrDefault(default: T): T =
     asOpt.getOrElse(default)
+
+  lazy val nonEmpty = asOpt.nonEmpty
 }
 
 case class Minimum(obj: JsObject) extends ValueExtractor[Long] {
@@ -46,7 +48,7 @@ case class MaxLength(obj: JsObject) extends ValueExtractor[Int] {
   val key = "maxLength"
 }
 
-case class Enum(obj: JsObject) extends ValueExtractor[Seq[String]] {
+case class Enum(obj: JsObject) extends ValueExtractor[List[String]] {
   val key = "enum"
 }
 
@@ -77,10 +79,15 @@ case class Type(obj: JsObject) extends ValueExtractor[String] {
   def is(s: String): Boolean = asOpt.contains(s)
 }
 
-case class Required(obj: JsObject) extends ValueExtractor[Seq[String]] {
+case class Required(obj: JsObject) extends ValueExtractor[List[String]] {
   val key = "required"
 }
 
 case class Properties(obj: JsObject) extends ValueExtractor[JsObject] {
   val key = "properties"
+
+  val values: Map[String, JsObject] = asOpt.map(_.value.flatMap {
+    case (k, obj@JsObject(_)) => List(k -> obj)
+    case _                    => List()
+  }.toMap).getOrElse(Map())
 }

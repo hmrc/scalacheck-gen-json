@@ -7,6 +7,7 @@ lazy val commonSettings = Seq(
   organization := "uk.gov.hmrc",
   majorVersion := 0,
   scalaVersion := "2.12.14",
+  scalacOptions ++= List("-Xfatal-warnings"),
   isPublicArtefact := true
 )
 
